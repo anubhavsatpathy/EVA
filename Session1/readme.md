@@ -1,2 +1,1 @@
-
-##What are **CHANNELS** and **FILTERS**?
+## What are **CHANNELS** and **FILTERS**?
