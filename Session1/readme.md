@@ -10,5 +10,5 @@ In the case of **convolution filters**, the the mathematical operation performed
 
 I will let the following image speak the remaining thousand words about channels and filters
 
-![Convolution Filters](Session1/images/channels.png)
+![Convolution Filters](/images/channels.png)
 
