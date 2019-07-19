@@ -8,4 +8,7 @@ These *kinds of information* contained within channels are refered to hereafter 
 
 In the case of **convolution filters**, the the mathematical operation performed is that of **Convolution**, one of the operands is the input channel or the image represented as a matrix or more generally a tensor of numbers and the other operand being a filter, also a matrix or more generally a tensor of numbers. The idea is that when **convolution** is performed using these **operands**, we will get output channels the represent the input channel in terms of the desired features
 
+I will let the following image speak the remaining thousand words about channels and filters
+
+![Convolution Filters](/images/channels)
 
