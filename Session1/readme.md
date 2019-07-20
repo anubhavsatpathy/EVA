@@ -39,9 +39,9 @@ Another advantage of using 3x3 kernels instead of even sized kernels is that the
 
 ## How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
 
-**With Max Pooling **
+**With Max Pooling**
 
-*Steps : 23
+*Steps : 23*
 
 - 199x199 | Convolution 3x3 | 197x197
 - 197x197 | Convolution 3x3 | 195x195
@@ -67,7 +67,7 @@ Another advantage of using 3x3 kernels instead of even sized kernels is that the
 - 5x5 | Convolution 3x3 | 3x3
 - 3x3 | Convolution 3x3 | 1x1
 
-**Without Max Pooling ** 
+**Without Max Pooling** 
 
 *Steps : 100*
 
