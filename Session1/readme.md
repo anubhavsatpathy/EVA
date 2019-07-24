@@ -69,7 +69,7 @@ Another advantage of using 3x3 kernels instead of even sized kernels is that the
 
 **Without Max Pooling** 
 
-*Steps : 100*
+*Steps : 99*
 
 - 199x199 | Convolution 3x3 | 197x197
 - 197x197 | Convolution 3x3 | 195x195
