@@ -14,10 +14,12 @@ I will let the following image speak the remaining thousand words about channels
 
 ## Why should we only (well mostly) use 3x3 kernels?
 
-Two reasons:
+Four reasons:
 
 - We can reduce any input channel to a 1x1 channel with GRF of the whole image using 3x3 channels
 - We can use the line of symmetry of the 3x3 kernel to express various features efficiently
+- To gain a GRF of the while image - applying 3x3 kernels leads to lesser memory rather than applying bigger kernels like 5x5 and therefore is normally more space efficient (Having said that it is usually a trade-off between the size of the kernel and the number of output channels)
+- Major GPU manufacturers (like Nvidia) have chosen to accelerate the 3x3 conv2D operation in their circuitry which affords us upto 25x speed improvements over other sized kernels
 
 Well the whole idea behind a network that employs a layered convolution is to arrive at a 1x1 output after n layers of convolution and ensure that the Global receptive field of this output is the whole image / input channel. Now let's take an example of a 5x5 image:
 
@@ -30,7 +32,7 @@ However we can employ 2 3x3 convolutions to acheive the same result:
 5x5 | Conv2D - 3x3 | 3x3
 3x3 | Conv2D - 3x3 | 1x1
 
-And there does not seem to be a loss in information since the GRF of the output channel in both cases is the whole 5x5 input channel - Hence we find that if we use 3x3 kernels, we would be able to reduce any odd sized input channel to a 1x1 output over n layers.
+And there does not seem to be a loss in information since the GRF of the output channel in both cases is the whole 5x5 input channel - Hence we find that if we use 3x3 kernels, we would be able to reduce any odd sized input channel to a 1x1 output over n layers using lesser number of parameters than had we used a 5x5 or even bigger kernels.
 
 One might ask what about even - sized input channels - well we ideally employ techniques of max pooling or padding to avoid these scenarios.
 
