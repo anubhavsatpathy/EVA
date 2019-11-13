@@ -34,7 +34,7 @@ Now, the previously set LR was set using LR finder which said that was the maxim
 
 David explains this aparent contradiction by introducing something that he calls **Catastrophic Forgetting**
 
-![Image of Forgetting]()
+![Image of Forgetting]()kkk
 
 
 
