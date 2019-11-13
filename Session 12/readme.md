@@ -1,5 +1,5 @@
 
-###Baseline
+### Baseline
 
 In this article, David summons our attention to the Stanford's DAWNbench competition in which teams and individuals compete on aspects like training speed and cost while acheiving a benchmark asccuracy on a standard dataset like CIFAR10, ImageNet etc. In particular he draws our attention to **Ben Jhonson's** winning entry that had taken 341 seconds on a single GPU to train to 94% validation accuracy on the CIFAR10 dataset.
 
@@ -17,7 +17,7 @@ This is the target - thet David sets for himself - In this section - he makes a 
 
 **At the end of this section training time is 297seconds**
 
-###Mini-Batches:
+### Mini-Batches:
 
 In this experiment, David does the following:
 - He increases batch size from 128 to 512
@@ -33,6 +33,8 @@ This does not make complete sense at all and to understand why - we have to unde
 Now, the previously set LR was set using LR finder which said that was the maximum optimal LR. Then how can we still increase batch size without incurring curvature penalties. Think - larger batch size = larger steps due to summation.
 
 David explains this aparent contradiction by introducing something that he calls **Catastrophic Forgetting**
+
+![Image of Forgetting]()
 
 
 
