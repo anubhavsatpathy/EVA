@@ -34,7 +34,13 @@ Now, the previously set LR was set using LR finder which said that was the maxim
 
 David explains this aparent contradiction by introducing something that he calls **Catastrophic Forgetting**
 
-![Image of Forgetting]()kkk
+![Image of Forgetting](https://github.com/anubhavsatpathy/EVA/tree/master/Session%2012)
+
+This tells us two things :
+
+- Curvature effects dominate at arounf 8X of original LR
+- Test losses for dataset size of 6250 starts increasing closer to where curvature effects start dominating while test losses for dataset size of 50K start increasing much earlier - This is what David calls *Catastrophic Forgetting*
+
 
 
 
