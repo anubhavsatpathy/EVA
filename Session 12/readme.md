@@ -32,7 +32,13 @@ This does not make complete sense at all and to understand why - we have to unde
 
 Now, the previously set LR was set using LR finder which said that was the maximum optimal LR. Then how can we still increase batch size without incurring curvature penalties. Think - larger batch size = larger steps due to summation.
 
-David explains this aparent contradiction by introducing something that he calls **Catastrophic Forgetting**
+David explains this aparent contradiction by introducing something that he calls **Catastrophic Forgetting**. He conducts the following experiment.
+
+- Train for a fixed number of epochs at a fixed optimal LR ranging from 0.125X to 16X of the LR found using LR finder
+- Do this for datasets of sizes 6250, 12000, 25000 and 50000
+- Prot Loss vs LR for each of these datasets
+
+Results can be found here
 
 ![Image of Forgetting](https://github.com/anubhavsatpathy/EVA/tree/master/Session%2012)
 
@@ -40,6 +46,29 @@ This tells us two things :
 
 - Curvature effects dominate at arounf 8X of original LR
 - Test losses for dataset size of 6250 starts increasing closer to where curvature effects start dominating while test losses for dataset size of 50K start increasing much earlier - This is what David calls *Catastrophic Forgetting*
+
+Smaller the dataset, lesser the effect of forgetting. Next he conducts yet another experiment to demonstrate the effects of forgetting:
+
+- Train by increasing LR linearly for 5 epochs and then train at constant LR for 25 epochs
+- Do this for a) 50% of dataset with no augmentation and b) 100% of dataset with standard augmentation
+- Freeze the weights of the model obtained from (b) and use it to recompute losses for the last few epochs
+
+Here are the results 
+
+- Losses remain the same for both datasets
+- Losses are lower for more recent epochs but gradually increase quickly are we move towards earlier epochs due to forgetting
+- This happens very gradually for lower learning rates
+
+### Regularization
+
+- Some GPU optimizations were performed to defuce the time taken by batch normalization 
+- NCHW channels were converted to NHWC for better performance
+- Cutout regularization was used
+- Training was done for 30 epochs using a batch size of 768 and a LR policy that increases linearly for 8 epochs and decreases thereafter
+
+Training time has now come down to **154 seconds**
+
+### Architecture
 
 
 
